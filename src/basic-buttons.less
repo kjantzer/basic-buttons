@@ -4,50 +4,44 @@
 	@author Kevin Jantzer
 	@since 2014-01-28
 	
-	requires elements.less
-	
 	Uses Fontello service for icons
 */
 
-@import url('basic-button-icon-font.less');
 
-
-
-@btn-font-family		: 'HelveticaNeue', 'Helvetica', 'Calbri', 'sans-serif';
-@btn-radius				: 3px;
-@btn-border-width		: 1px;
-@btn-transition-speed	: 120ms;
-
-@btn-color-dark			: #444;
-@btn-color-primary		: @btn-color-dark;
-@btn-color-secondary	: #ddd;
-@btn-color-red			: #c0392b;
-@btn-color-green		: #27ae60;
-@btn-color-sage			: #c6e59a;
-@btn-color-blue			: #3498db;
-@btn-color-orange		: #f39c12;
-@btn-color-flatpurple	: #9c9fbf;
-@btn-color-palegold		: #f7f6c3;
-@btn-color-yellow		: #f1c40f;
-@btn-color-gold			: #e5c263;
-@btn-color-teal			: #04acbe;
-@btn-color-volt			: #b8dd00;
+@import 'variables.less';
+@import 'basic-button-icon-font.less';
 
 
 .subtle-hover(@color, @textColor:#fff){
 	background: @color;
 	border-color: @color;
-	color: @textColor
+	color: @textColor !important;
 }
 
 .color-btn(@color, @textColor:#fff){
-	background: @color;
-	border-color: @color;
-	color: @textColor;
+	background: @color !important;
+	border-color: @color !important;
+	color: @textColor !important;
 	
-	&:not(.disabled):hover {
-		background: lighten(@color, 5%);
-		border-color: lighten(@color, 5%);
+	&:not(.disabled):hover,
+	&.dropdown-open {
+		background: lighten(@color, 5%) !important;
+		border-color: lighten(@color, 5%) !important;
+	}
+
+	&:focus:not(:active):after {
+		border-color: @color !important;
+	}
+	
+	&.ghost {
+		color: @color !important;
+		background: transparent !important;
+
+		&:hover {
+			background: lighten(@color, 5%) !important;
+			border-color: lighten(@color, 5%) !important;
+			color: @textColor !important;
+		}
 	}
 }
 
@@ -71,22 +65,47 @@
 	color: #888;
 	text-shadow: none;
 	font-smooth:always;
+	text-transform: none;
 	text-decoration: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	
-	-webkit-transition: all @btn-transition-speed;
-	   -moz-transition: all @btn-transition-speed;
-	   		transition: all @btn-transition-speed;
+	-webkit-transition-duration: @btn-transition-speed;
+	   -moz-transition-duration: @btn-transition-speed;
+	   		transition-duration: @btn-transition-speed;
+	   		
+	-webkit-transition-propery: color, border, background;
+	   -moz-transition-propery: color, border, background;
+	   		transition-propery: color, border, background;
 	
 	&.pill { .rounded(100px); }
+	
+	&.block { display: block; text-align: center; }
 	
 	&.disabled {
 		cursor: default;
 		opacity: .3;
 		pointer-events: none;
+	}
+
+	&.has-spinner {
+		color: transparent !important;
+	}
+
+	//&:active:after,
+	&:focus:not(:active):after {
+		content: '';
+		background: transparent;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		border: double 3px #ccc;
+		border-radius: @btn-radius;
 	}
 	
 	&.on-dark {
@@ -97,7 +116,10 @@
 /*
 	HOVER STATES
 */
-	&:hover { background: #f9f9f9; color: @btn-color-dark; }
+	&:not(.disabled):hover,
+	&.dropdown-open { 
+		background: #f9f9f9; color: @btn-color-dark;
+	}
 	
 	&.hover-red:hover 		{ .subtle-hover(@btn-color-red); }
 	&.hover-dark:hover		{ .subtle-hover(@btn-color-dark); }
@@ -116,9 +138,45 @@
 		border-color: #eee;
 		color: @btn-color-dark;
 		
-		&:hover {
+		&:not(.disabled):hover,
+		&.dropdown-open {
 			background: #ddd;
 			border-color: #ddd;
+		}
+	}
+
+	&.purewhite {
+		background: #fff;
+		border-color: #fff;
+		color: @btn-color-dark;
+		
+		&:not(.disabled):hover,
+		&.dropdown-open {
+			background: #ddd;
+			border-color: #ddd;
+		}
+	}
+
+	&.transparent {
+		font-size: 1.1rem;
+		line-height: 1rem;
+		padding: .2em .5em;
+		border: transparent;;
+
+		&:before {
+			color: #333;
+			opacity: .5;
+		}
+
+		&:not(.disabled):hover,
+		&.dropdown-open {
+			background: transparent;
+			border-color: transparent;
+		}
+
+		&:not(.disabled):hover:before,
+		&.dropdown-open:before {
+			opacity: 1;
 		}
 	}
 	
@@ -143,25 +201,30 @@
 	SIZES
 */
 	&.tiny {
-		font-size: .7em;
-		padding: .3em .5em;
+		font-size: .7rem;
+		padding: .3rem .5rem;
+	}
+
+	&.small {
+		font-size: .85rem;
+		padding: .35rem .55rem;
 	}
 
 	&.medium {
-		font-size: 1.2em;
-		line-height: 1em;
-		//padding: .4em .65em;
+		font-size: 1.2rem;
+		line-height: 1rem;
+		//padding: .4rem .65rem;
 	}
 	
 	&.large {
-		font-size: 1.5em;
-		line-height: 1em;
+		font-size: 1.5rem;
+		line-height: 1rem;
 		border-width: @btn-border-width+1;
 	}
 	
 	&.huge {
-		font-size: 2.5em;
-		line-height: 1em;
+		font-size: 2.5rem;
+		line-height: 1rem;
 		border-width: @btn-border-width+1;
 	}
 	
@@ -175,9 +238,14 @@
 		
 		&:before {
 			font-size: 1em;
-			line-height: 1em;
-			margin: 0 .3em 0 -0.2em;
+			line-height: 1rem;
+			margin: .05em .3em -.05em -0.2em;
 			vertical-align: bottom;
+		}
+
+		&.icon-rightside:before {
+			float: right;
+			margin: .05em -0.2em -.05em .3em;
 		}
 		
 		&:empty:before,
@@ -222,12 +290,13 @@
 .btn-group {
 	display: inline-block;
 	position: relative;
+	vertical-align: middle;
 	.rounded(@btn-radius);
-	border: solid 1px #ccc;
+	//border: solid 1px #ccc;
 	
 	> .btn {
 		.box-shadow(none);
-		border: none;
+		//border: none;
 		float: left;
 		.border-radius(0px);
 		margin: 0 !important;
@@ -236,7 +305,8 @@
 		&:first-child:last-child {.rounded(@btn-radius);}
 		&:last-child:not(:first-child) {.border-radius(@btn-radius, @btn-radius, 0, 0);}
 		&:not(:first-child) {
-			border-left: 1px solid rgba(0, 0, 0, 0.15);
+			border-left: none;
+			//border-left: 1px solid rgba(0, 0, 0, 0.15);
 		}
 		
 		
@@ -249,6 +319,14 @@
 		
 	}
 	
+	&.block {
+		.display-flex();
+		
+		> a {
+			flex: 1;
+			text-align: center;
+		}
+	}
 	
 	&.crumbs {
 		.box-shadow(none);

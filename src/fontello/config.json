@@ -1,5 +1,5 @@
 {
-  "name": "basic-buttons-icon-font",
+  "name": "basic-buttons-font",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -85,12 +85,6 @@
       "src": "fontawesome"
     },
     {
-      "uid": "bec22f5ef2f066ae057a0246fc6a36dd",
-      "css": "plus-squared-small",
-      "code": 59434,
-      "src": "fontawesome"
-    },
-    {
       "uid": "861ab06e455e2de3232ebef67d60d708",
       "css": "minus",
       "code": 59438,
@@ -112,12 +106,6 @@
       "uid": "18ef25350258541e8e54148ed79845c0",
       "css": "minus-squared-alt",
       "code": 59432,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "21e8b8217ed9d1a164fd02eff39c5388",
-      "css": "minus-squared-small",
-      "code": 59433,
       "src": "fontawesome"
     },
     {
@@ -217,6 +205,24 @@
       "src": "fontawesome"
     },
     {
+      "uid": "f761c3bbe16ba2d332914ecb28e7a042",
+      "css": "file-excel",
+      "code": 59451,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e80ae555c1413a4ec18b33fb348b4049",
+      "css": "file-archive",
+      "code": 59452,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "26613a2e6bc41593c54bead46f8c8ee3",
+      "css": "file-code",
+      "code": 59450,
+      "src": "fontawesome"
+    },
+    {
       "uid": "559647a6f430b3aeadbecd67194451dd",
       "css": "menu",
       "code": 61641,
@@ -277,9 +283,51 @@
       "src": "fontawesome"
     },
     {
+      "uid": "ce06b5805120d0c2f8d60cd3f1a4fdb5",
+      "css": "play",
+      "code": 59433,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b624a1e512819d410ddbee84e6918b9d",
+      "css": "stop",
+      "code": 59434,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0b28050bac9d3facf2f0226db643ece0",
+      "css": "pause",
+      "code": 59446,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4e511190b60f329d08301eb6869c5130",
+      "css": "fast-fw",
+      "code": 59447,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b3d902fcead809e3a64c7ddcda497a6c",
+      "css": "fast-bw",
+      "code": 59448,
+      "src": "fontawesome"
+    },
+    {
       "uid": "53dd31a6cc6438192b2d7b09b1c1dd45",
       "css": "columns",
       "code": 59424,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "8772331a9fec983cdb5d72902a6f9e0e",
+      "css": "scissors",
+      "code": 37,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "b429436ec5a518c78479d44ef18dbd60",
+      "css": "paste",
+      "code": 36,
       "src": "fontawesome"
     },
     {
@@ -349,6 +397,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "7f3d8ff1d5f6ee019f0c00ed7a86caec",
+      "css": "truck",
+      "code": 59449,
+      "src": "fontawesome"
+    },
+    {
       "uid": "026007bd17bfc67f3fe013199676f620",
       "css": "dollar-1",
       "code": 59426,
@@ -415,9 +469,27 @@
       "src": "fontawesome"
     },
     {
+      "uid": "8c0ffa714cecbf5144e022d9c3df4a1f",
+      "css": "bank",
+      "code": 33,
+      "src": "fontawesome"
+    },
+    {
       "uid": "44a0e2660ac966cdfaa04deb6aac51df",
       "css": "shield",
       "code": 59441,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "fbede3c5584282a0e9b131926dff71da",
+      "css": "cube",
+      "code": 35,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "af95ef0ddda80a78828c62d386506433",
+      "css": "cubes",
+      "code": 34,
       "src": "fontawesome"
     },
     {
@@ -745,6 +817,12 @@
       "src": "entypo"
     },
     {
+      "uid": "52725ff4d4042964bd3a60609bf3695b",
+      "css": "right-circled-1",
+      "code": 39,
+      "src": "entypo"
+    },
+    {
       "uid": "64691230b90991883f94c6dfb2afc90a",
       "css": "up-circled",
       "code": 59227,
@@ -1036,6 +1114,18 @@
       "uid": "52177c3387cdac48d6ed18bebe84c34a",
       "css": "headphones",
       "code": 127911,
+      "src": "iconic"
+    },
+    {
+      "uid": "e3699d145bd628d2a35d4a508b616f0c",
+      "css": "equalizer",
+      "code": 42,
+      "src": "iconic"
+    },
+    {
+      "uid": "d2c499942f8a7c037d5a94f123eeb478",
+      "css": "layers",
+      "code": 38,
       "src": "iconic"
     },
     {
