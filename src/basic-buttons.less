@@ -52,7 +52,9 @@
 	cursor: pointer;
 	vertical-align: middle;
 	padding: .4em .65em;
+	min-width: .25rem;
 	text-decoration: none;
+	text-align: center;
 	.rounded(@btn-radius);
 	border: solid @btn-border-width #ccc;
 	background: transparent;
@@ -239,14 +241,21 @@
 		&:before {
 			font-size: 1em;
 			line-height: 1rem;
-			margin: .05em .3em -.05em -0.2em;
+			margin: 0em .3em -.1em -0.2em;
 			vertical-align: bottom;
 		}
 
 		&.icon-rightside:before {
 			float: right;
-			margin: .05em -0.2em -.05em .3em;
+			margin: 0em .3em -.1em -0.2em;
 		}
+		
+		&.tiny:before,
+		&.tiny.icon-rightside:before {
+			margin-top: -.2em;
+			margin-bottom: -.2em;
+		}
+		
 		
 		&:empty:before,
 		&.icon-only:before {
