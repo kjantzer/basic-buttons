@@ -4,8 +4,9 @@
   "description": "A starting point for app buttons and icons",
   "main": "index.html",
   "scripts": {
-    "start": "parcel demo/index.html --out-dir demo-build/",
-    "build": "parcel build demo/index.html --out-dir demo-build/"
+    "start": "parcel demo/index.html --out-dir demo-build --public-url ./",
+    "build": "parcel build demo/index.html --out-dir demo-build --public-url ./",
+    "gh-pages": "node node_modules/push-dir/bin/push-dir.js --dir=demo-build --branch=gh-pages"
   },
   "files": [
     "src"
