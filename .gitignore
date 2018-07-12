@@ -1,4 +1,3 @@
 node_modules
-lib/demo-base.less
-lib/elements.less
-lib/flexbox-mixins.less
+.cache
+demo-build

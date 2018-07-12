@@ -1,0 +1,291 @@
+<html>
+<head>
+
+<title>Basic Buttons</title>
+<meta charset="utf-8">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44608486-6', 'kjantzer.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+<link href="./style.less" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+
+<a href="https://github.com/kjantzer/basic-buttons" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#607D8B; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+<header>
+
+    <nav class="menu">
+        <a class="menu-btn" onclick="this.parentNode.classList.toggle('open')"><img src="./list.png"></a>
+        <ul id="menu"></ul>
+    </nav>
+    <script>
+    $.getJSON('https://gist.githubusercontent.com/kjantzer/9abbb6cc17d1b6699221/raw', function(menu){
+        var $menu = $('#menu');
+        $.each(menu, function(indx, m){
+            $menu.append('<li><a href="http://kjantzer.github.io/'+m.key+'">'+m.label+
+                '<div class="description">'+(m.description||'')+'</div>'+
+                '</a></li>')
+        })
+    })
+    </script>
+
+                <h1>Basic Buttons</h1>
+
+                <h3>A starter for buttons and icons within your project.</h3>
+
+                <br>
+
+                <div>
+
+            <a class="btn medium">Button</a>
+
+            <span class="btn-group">
+                <a class="btn medium">Select</a>
+                <a class="btn icon-down-open medium"></a>
+            </span>
+
+            <a class="btn medium icon-user-add"></a>
+            <a class="btn medium icon-options"></a>
+            <a class="btn medium icon-sort"></a>
+
+                </div>
+
+</header>
+
+
+
+<section>
+
+                <h1>Overview</h1>
+
+        <p><b>Version 1.1.0</b></p>
+
+        <p>Why reproduce similar code every time you need buttons or icons for a new project? Start with <a href="http://kjantzer.github.io/basic-buttons/">basic-buttons.less</a> then customize to your needs. Over 200 icons are already included and the file is structured to make customization quick and easy.<p>
+
+        <div>
+            <a class="btn black">Button</a>
+            &nbsp;&nbsp;&nbsp;<code><xmp><a class="btn black">Button</a></xmp></code>
+        </div>
+
+        <br>
+
+        <div>
+            <a class="btn icon-cog black">Button</a>
+            &nbsp;&nbsp;&nbsp;<code><xmp><a class="btn icon-cog black">Button</a></xmp></code>
+        </div>
+        
+        <br>
+
+        <div>
+            <span class="btn transparent icon-cog icon-only"></span>
+            &nbsp;&nbsp;&nbsp;<code><xmp><span class="btn transparent icon-cog icon-only"></span></xmp></code>
+        </div>
+        
+        <br>
+
+        <div>
+            <span class="icon-cog"></span>
+            &nbsp;&nbsp;&nbsp;<code><xmp><span class="icon-cog"></span></xmp></code>
+        </div>
+
+        <hr>
+
+
+                <h1>Colors</h1>
+
+                <p>To create a button add a <code>.btn</code> class. Then add the desired color preset <code>.primary</code>, <code>.blue</code>, etc.
+
+                <p>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium">Default</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium black">Black</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium white">White</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium red">Red</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium yellow">Yellow</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium green">Green</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium blue">Blue</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium pink">Pink</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium orange">Orange</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium purple">Purple</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium teal">Teal</a>
+                        <a style="margin-bottom: .5em; margin-right: .5em;" class="btn medium brown">Brown</a>
+                </p>
+
+                <hr>
+
+                <h1>Ghost Color Style</h1>
+
+                <p>Add <code>.ghost</code> for an outline style</p>
+
+                <p>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium">Default</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium black">Black</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium red">Red</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium yellow">Yellow</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium green">Green</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium blue">Blue</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium pink">Pink</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium orange">Orange</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium purple">Purple</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium teal">Teal</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn ghost medium brown">Brown</a>
+                </p>
+                
+                <hr />
+                
+                <h1>Text Button</h1>
+                
+                <p>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn text-btn">Text Button</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn text-btn">Another Button</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn text-btn blue">Blue</a>
+                    <a style="margin-bottom: .5em; margin-right: .5em;" class="btn text-btn red">Red</a>
+                </p>
+
+                <hr>
+
+                <h1>Sizes</h1>
+
+                <p>Sizes available: default, <code>.tiny</code>, <code>.medium</code>, <code>.large</code>, <code>.huge</code></p>
+
+                <p>
+                        <a class="btn tiny">Tiny</a>
+                        <a class="btn primary">Default</a>
+                        <a class="btn medium">Medium</a>
+                        <a class="btn large">Large</a>
+                        <a class="btn huge">Huge</a>
+                </p>
+
+                <hr>
+
+                <h1>Icons</h1>
+
+                <p>Add an icon to your button to spice things up <code>.icon-cog</code>.<br>You can use an icon without button text too.</p>
+
+                <p>
+                        <a class="btn secondary icon-cog">Settings</a>
+                        <a class="btn red icon-trash">Delete</a>
+                        <a class="btn green icon-user">Add User</a>
+                        <a class="btn blue icon-chart">View Report</a>
+                        <a class="btn secondary icon-options" title="More Settings"></a>
+                        <a class="btn secondary icon-sort" title="Drag to move"></a>
+
+                </p>
+
+        <p>Use <code>icon-rightside</code> to flip the icon to the other side</p>
+
+        <p><a class="btn secondary icon-right-open icon-rightside">Settings</a></p>
+
+        <p>Icons can also be added to any <span class="icon-code">element</span>.</p>
+
+        <blockquote>
+                <p>See the `src/fontello/demo.html` for a complete list of 200+ icons.</p>
+        </blockquote>
+
+                <hr>
+
+        <h1>Button Groups</h1>
+
+        <p>Wrap buttons with a <code>.btn-group</code> span to create a unified group of buttons. Add class <code>.active</code> for a selected state.</p>
+
+                <p>
+                        <span class="btn-group">
+                                <a class="btn medium">Option 1</a>
+                                <a class="btn medium active">Option 2</a>
+                                <a class="btn medium">Option 3</a>
+                                <a class="btn medium">Option 4</a>
+                        </span>
+                </p>
+
+<pre><xmp><span class="btn-group">
+    <a class="btn medium">Option 1</a>
+    <a class="btn medium active">Option 2</a>
+    <a class="btn medium">Option 3</a>
+    <a class="btn medium">Option 4</a>
+</span></xmp></pre>
+
+                <p>Pair with an icon to create a custom select box.</p>
+                <p>
+                        <span class="btn-group">
+                                <a class="btn tiny">Select</a>
+                                <a class="btn tiny icon-down-open"></a>
+                        </span>
+
+            <span class="btn-group">
+                                <a class="btn">Select</a>
+                                <a class="btn icon-down-open"></a>
+                        </span>
+
+            <span class="btn-group">
+                                <a class="btn medium">Select</a>
+                                <a class="btn medium icon-down-open"></a>
+                        </span>
+
+            <span class="btn-group">
+                                <a class="btn large">Select</a>
+                                <a class="btn large icon-down-open"></a>
+                        </span>
+
+            <span class="btn-group">
+                                <a class="btn huge">Select</a>
+                                <a class="btn huge icon-down-open"></a>
+                        </span>
+
+                </p>
+
+        <p>Then use something like <a href="https://github.com/kjantzer/backbone-dropdown">Dropdown</a> to display the menu.</p>
+
+                <hr>
+
+                <h1>Variants</h1>
+
+                <p>Use <code>@btn-radius</code> to set the default radius for all your buttons. Optionally, there is a <code>.pill</code> class already set.</p>
+                <p>
+                        <a class="btn medium">Default Radius</a>
+                        <a class="btn medium pill">Pill Button</a>
+                </p>
+
+                <hr>
+
+                <h1>Customizing</h1>
+
+                <p>Adding new colors is really easy with the provided mixin</p>
+
+                <pre>&.newcolor	{ .color-btn(colorOfBtn, txtColor); }</pre>
+
+                <p>Changing the provided colors can be easily done by modifying <code>src/variables.less</code></p>
+
+                <pre>@btn-color-red		: #c0392b;
+@btn-color-green	: #27ae60;
+@btn-color-sage		: #c6e59a;
+@btn-color-blue		: #3498db;
+...</pre>
+
+        <hr>
+
+        <h1>License</h1>
+
+        <p>MIT © <a href="http://twitter.com/kjantzer">Kevin Jantzer</a></p>
+
+
+        <hr>
+
+        <small>Built by <a href="http://twitter.com/kjantzer">Kevin Jantzer</a>, <a href="http://blackstoneaudio.com">Blackstone Publishing</a></small>
+
+</section>
+
+
+</body>
+</html>
